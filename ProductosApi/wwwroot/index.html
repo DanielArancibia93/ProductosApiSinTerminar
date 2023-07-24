@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Productos CRUD</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Productos CRUD</h1>
+    <h3>Agregar</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-nombre" placeholder="Nombre">
+        <input type="text" id="add-descripcion" placeholder="Descripcion">
+        <input type="text" id="add-cantidadIni" placeholder="Cantidad">
+        <input type="text" id="add-precio" placeholder="Precio">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Editar</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-nombre">
+            <input type="text" id="edit-descripcion">
+            <input type="text" id="edit-cantidadIni">
+            <input type="text" id="edit-precio">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="productos"></tbody>
+    </table>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>
